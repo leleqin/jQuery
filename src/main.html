@@ -10,13 +10,73 @@
     <script src="../node_modules/lodash/lodash.min.js"></script>
     <script src="js/main.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" type="text/css" href="./css/build.css">
+
+
     <title>Form Designer</title>
 </head>
 
 <body>
 <div>
-    <div id="container"></div>
+    <div class="container">
+        <div class="bs-example" data-example-id="simple-table">
+            <h3>表单设计器 jQuery 版</h3>
+            <div class="row">
+                <button class="btn btn-default" type="submit" id="look">预览</button>
+                <button class="btn btn-default" type="submit" id="edit" >编辑</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add">
+                    添加
+                </button>
+            </div>
+            <div class="row">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>字段类型</th>
+                        <th id="hideThead">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加模态框</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="name">选择字段类型 :</label>
+                    <div class="radio radio-inline">
+                        <input type="radio" id="singleRadio1" value="文字" name="radioSingle1" aria-label="Single radio One">
+                        <label for="singleRadio1">文字</label>
+                    </div>
+                    <div class="radio radio-success radio-inline">
+                        <input type="radio" id="singleRadio2" value="日期" name="radioSingle1" checked="" aria-label="Single radio Two">
+                        <label for="singleRadio2">日期</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel">取消</button>
+                    <button type="button" class="btn btn-primary" id="confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
-</html>
 
+</html>
